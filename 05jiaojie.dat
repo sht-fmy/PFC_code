@@ -1,0 +1,92 @@
+model restore ""cluster_rblock""
+
+contact cmat default  model linear method deform emod 10e7 kratio 1.5 property  fric 0.1 dp_nratio 0.1 dp_sratio 0.1
+contact cmat add 1 model linear method deform emod 10e10 kratio 1.5 ...
+        property fric 0.8 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range contact type "ball-facet" 
+
+contact cmat add 2 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder1' match 2
+contact cmat add 3 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder2' match 2 
+contact cmat add 4 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder3' match 2 
+contact cmat add 5 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder4' match 2
+contact cmat add 6 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder5' match 2 
+contact cmat add 7 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder6' match 2
+contact cmat add 8 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder7' match 2
+contact cmat add 9 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder8' match 2 
+contact cmat add 10 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder9' match 2 
+contact cmat add 11 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder10' match 2
+contact cmat add 12 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder11' match 2 
+contact cmat add 13 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder12' match 2
+contact cmat add 14 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder13' match 2
+contact cmat add 15 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder14' match 2 
+contact cmat add 16 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder15' match 2 
+contact cmat add 17 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder16' match 2
+contact cmat add 18 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder17' match 2 
+contact cmat add 19 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder18' match 2
+contact cmat add 20 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder19' match 2
+contact cmat add 21 model linearcbond method deformability emod 4.0e6 krat 1.5 property cb_tenf 1e18 cb_shearf 1e18 dp_nratio 0.1 dp_sratio 0.1   range  group 'binder20' match 2 
+contact cmat apply
+model clean
+contact method bond gap [radius_binder*2]
+
+cmat add 22 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range group 'cluster1' match 2        
+cmat add 23 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range group 'cluster2' match 2
+cmat add 24 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster3' match 2 
+cmat add 25 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster4' match 2
+cmat add 26 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster5' match 2
+cmat add 27 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster6' match 2 
+cmat add 28 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range group 'cluster7' match 2        
+cmat add 29 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range group 'cluster8' match 2
+cmat add 30 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster9' match 2 
+cmat add 31 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster10' match 2
+cmat add 32 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster11' match 2
+cmat add 33 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster12' match 2 
+cmat add 34 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster13' match 2        
+cmat add 35 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster14' match 2
+cmat add 36 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster15' match 2 
+cmat add 37 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster16' match 2
+cmat add 38 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster17' match 2
+cmat add 39 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster18' match 2 
+cmat add 40 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster19' match 2
+cmat add 41 model linearpbond method deform emod 1.8e8 kratio 1.5 pb_deform emod 1.8e8 kratio 1.5 ...
+        property pb_coh 5e8 pb_ten 5e8 pb_fa 50 fric 0.1 dp_nratio 0.1 dp_sratio 0.1 lin_mode 1  range  group 'cluster20' match 2 
+
+contact cmat apply
+model clean
+contact method bond gap [radius_binder*2]
+
+contact property lin_force 0 0 0
+ball attribute force-contact 0 0 0 moment-contact 0 0 0
+model calm
+
+model cycle 10
+
+;model solve ratio-average 5e-4
+;model save "cluster_jiaojie_5e-4"
+;model restore "cluster_jiaojie_5e-4"
+model solve ratio-average 5e-3
+model calm
+model save "cluster_jiaojie"
+
+
+
+
+

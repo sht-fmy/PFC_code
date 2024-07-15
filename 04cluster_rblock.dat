@@ -1,0 +1,140 @@
+model restore "ball_sample"
+
+; Import the stl files of the rigid blocks 
+geometry import 'crystal_1.stl'
+geometry import 'crystal_10.stl'
+geometry import 'crystal_15.stl'
+geometry import 'crystal_16.stl'
+geometry import 'crystal_253.stl'
+geometry import 'crystal_256.stl'
+
+; Create the rigid blocks and round them. The rounding is introduced to 
+; both reduce the computational time and to make the edges of the block
+; less angular
+rblock template create 'crystal_group1' from-geometry 'crystal_1' round relative 1
+rblock template create 'crystal_group2' from-geometry 'crystal_10' round relative 1
+rblock template create 'crystal_group3' from-geometry 'crystal_15' round relative 1
+rblock template create 'crystal_group4' from-geometry 'crystal_16' round relative 1
+rblock template create 'crystal_group5' from-geometry 'crystal_253' round relative 1
+rblock template create 'crystal_group6' from-geometry 'crystal_256' round relative 1
+
+def genghuan_rblock1
+    loop foreach bp ball.groupmap("crystal_1")           
+            x_pos   = ball.pos(bp,1)
+            y_pos   = ball.pos(bp,2)
+            z_pos   = ball.pos(bp,3)
+            bvol = 1.33333*math.pi*ball.radius(bp)^3   
+            ball.delete(bp)  
+            
+            angle= math.random.uniform*360 
+            command                
+                rblock replicate    ...
+                             'crystal_group1' ...
+                          position-x @x_pos position-y @y_pos position-z @z_pos  ...
+                           size @bvol angle @angle
+            endcommand    
+    endloop
+end
+@genghuan_rblock1
+def genghuan_rblock2
+    loop foreach bp ball.groupmap("crystal_2")           
+            x_pos   = ball.pos(bp,1)
+            y_pos   = ball.pos(bp,2)
+            z_pos   = ball.pos(bp,3)
+            bvol = 1.33333*math.pi*ball.radius(bp)^3   
+            ball.delete(bp)  
+            
+            angle= math.random.uniform*360 
+            command                
+                rblock replicate    ...
+                             'crystal_group2' ...
+                          position-x @x_pos position-y @y_pos position-z @z_pos  ...
+                           size @bvol angle @angle
+            endcommand    
+    endloop
+end
+@genghuan_rblock2
+def genghuan_rblock3
+    loop foreach bp ball.groupmap("crystal_3")           
+            x_pos   = ball.pos(bp,1)
+            y_pos   = ball.pos(bp,2)
+            z_pos   = ball.pos(bp,3)
+            bvol = 1.33333*math.pi*ball.radius(bp)^3   
+            ball.delete(bp)  
+            
+            angle= math.random.uniform*360 
+            command                
+                rblock replicate    ...
+                             'crystal_group3' ...
+                          position-x @x_pos position-y @y_pos position-z @z_pos  ...
+                           size @bvol angle @angle
+            endcommand    
+    endloop
+end
+@genghuan_rblock3
+def genghuan_rblock4
+    loop foreach bp ball.groupmap("crystal_4")           
+            x_pos   = ball.pos(bp,1)
+            y_pos   = ball.pos(bp,2)
+            z_pos   = ball.pos(bp,3)
+            bvol = 1.33333*math.pi*ball.radius(bp)^3   
+            ball.delete(bp)  
+            
+            angle= math.random.uniform*360 
+            command                
+                rblock replicate    ...
+                             'crystal_group4' ...
+                          position-x @x_pos position-y @y_pos position-z @z_pos  ...
+                           size @bvol angle @angle
+            endcommand    
+    endloop
+end
+@genghuan_rblock4
+def genghuan_rblock5
+    loop foreach bp ball.groupmap("crystal_5")           
+            x_pos   = ball.pos(bp,1)
+            y_pos   = ball.pos(bp,2)
+            z_pos   = ball.pos(bp,3)
+            bvol = 1.33333*math.pi*ball.radius(bp)^3   
+            ball.delete(bp)  
+            
+            angle= math.random.uniform*360 
+            command                
+                rblock replicate    ...
+                             'crystal_group5' ...
+                          position-x @x_pos position-y @y_pos position-z @z_pos  ...
+                           size @bvol angle @angle
+            endcommand    
+    endloop
+end
+@genghuan_rblock5
+def genghuan_rblock6
+    loop foreach bp ball.groupmap("crystal_6")           
+            x_pos   = ball.pos(bp,1)
+            y_pos   = ball.pos(bp,2)
+            z_pos   = ball.pos(bp,3)
+            bvol = 1.33333*math.pi*ball.radius(bp)^3   
+            ball.delete(bp)  
+            
+            angle= math.random.uniform*360 
+            command                
+                rblock replicate    ...
+                             'crystal_group6' ...
+                          position-x @x_pos position-y @y_pos position-z @z_pos  ...
+                           size @bvol angle @angle
+            endcommand    
+    endloop
+end
+@genghuan_rblock6
+rblock attribute density 2.18e3 damp 0.7
+contact cmat default model linear method deform emod 100e6 kratio 1.5 property  fric 0.5
+
+contact property lin_force 0 0 0
+ball attribute force-contact 0 0 0 moment-contact 0 0 0
+
+model cycle 10 
+model mechanical timestep scale
+model cycle 200 calm 10
+model mechanical timestep auto
+model calm
+model save "cluster_rblock"

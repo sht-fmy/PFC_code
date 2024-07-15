@@ -1,0 +1,62 @@
+model restore  "cluster_jiaojie"
+
+contact cmat default type ball-facet model linear method deform emod 100e50 kratio 1.5 property  fric 0.8
+model mechanical time-total 0
+ball attribute displacement multiply 0
+def wall_init
+    wpUp=wall.find(2)
+    wpDown=wall.find(3)
+end
+@wall_init
+
+measure create id 1 position 0 0 0  radius [sample_rad*0.2]
+[mp=measure.find(1)]
+
+[IZ0=wall.pos.z(wpUp)-wall.pos.z(wpDown)]
+
+wall attribute vel-z [-IZ0*strainrate] range id 2
+;wall attribute vel-z [IZ0*strainrate*0.5] range id 3
+
+def jiance
+    whilestepping
+    ding_yuanmianji=math.pi*sample_rad^2
+    wszz=(wall.force.contact.z(wpUp)-wall.force.contact.z(wpDown))*0.5/ding_yuanmianji
+    wlz=wall.pos.z(wpUp)-wall.pos.z(wpDown)
+    wezz=(wlz-IZ0)/IZ0
+    zaihe=wall.force.contact.z(wpUp)
+    weiyi=wall.disp.z(wpUp)
+end
+fish callback add @jiance -1.0
+
+history delete
+fish history id 1 @wszz
+fish history id 2 @wezz
+fish history id 3 @zaihe
+fish history id 4 @weiyi
+
+[stop_me=0]
+def stop_me
+    if wezz<-60e-2 then
+        stop_me=1
+    endif
+end
+[baocunpinlv=1e-2]
+[time_record=wezz+1]
+[count=0]
+def savefile    
+    if time_record-wezz >= baocunpinlv then
+        filename=string.build("jieguo_fracture_%1",count)
+        command
+           model save @filename
+        endcommand
+        time_record=wezz
+        count +=1
+    endif    
+end
+fish callback add @savefile -2.0
+
+program call 'fracture.fis'
+[track_init]
+model solve fishhalt @stop_me
+[track_end]
+model save "result"

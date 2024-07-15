@@ -1,0 +1,79 @@
+geometry import 'set_1.stl'
+ball group 'cluster1' range  geometry-space 'set_1' inside
+rblock group 'cluster1' range  geometry-space 'set_1' inside
+
+geometry import 'set_2.stl'
+ball group 'cluster2' range geometry-space 'set_2' inside
+rblock group 'cluster2' range geometry-space 'set_2' inside
+
+geometry import 'set_3.stl'
+ball group 'cluster3' range geometry-space 'set_3' inside
+rblock group 'cluster3' range geometry-space 'set_3' inside
+
+geometry import 'set_4.stl'
+ball group 'cluster4' range geometry-space 'set_4' inside
+rblock group 'cluster4' range geometry-space 'set_4' inside
+
+geometry import 'set_5.stl'
+ball group 'cluster5' range geometry-space 'set_5' inside
+rblock group 'cluster5' range geometry-space 'set_5' inside
+
+geometry import 'set_6.stl'
+ball group 'cluster6' range geometry-space 'set_6' inside
+rblock group 'cluster6' range  geometry-space 'set_6' inside
+
+geometry import 'set_7.stl'
+ball group 'cluster7' range  geometry-space 'set_7' inside
+rblock group 'cluster7' range  geometry-space 'set_7' inside
+
+geometry import 'set_8.stl'
+ball group 'cluster8' range geometry-space 'set_8' inside
+rblock group 'cluster8' range geometry-space 'set_8' inside
+
+geometry import 'set_9.stl'
+ball group 'cluster9' range geometry-space 'set_9' inside
+rblock group 'cluster9' range geometry-space 'set_9' inside
+
+geometry import 'set_10.stl'
+ball group 'cluster10' range geometry-space 'set_10' inside
+rblock group 'cluster10' range geometry-space 'set_10' inside
+
+geometry import 'set_11.stl'
+ball group 'cluster11' range geometry-space 'set_11' inside
+rblock group 'cluster11' range geometry-space 'set_11' inside
+
+geometry import 'set_12.stl'
+ball group 'cluster12' range geometry-space 'set_12' inside
+rblock group 'cluster12' range geometry-space 'set_12' inside
+
+geometry import 'set_13.stl'
+ball group 'cluster13' range  geometry-space 'set_13' inside
+rblock group 'cluster13' range  geometry-space 'set_13' inside
+
+geometry import 'set_14.stl'
+ball group 'cluster14' range geometry-space 'set_14' inside
+rblock group 'cluster14' range geometry-space 'set_14' inside
+
+geometry import 'set_15.stl'
+ball group 'cluster15' range geometry-space 'set_15' inside
+rblock group 'cluster15' range geometry-space 'set_15' inside
+
+geometry import 'set_16.stl'
+ball group 'cluster16' range geometry-space 'set_16' inside
+rblock group 'cluster16' range geometry-space 'set_16' inside
+
+geometry import 'set_17.stl'
+ball group 'cluster17' range geometry-space 'set_17' inside
+rblock group 'cluster17' range geometry-space 'set_17' inside
+
+geometry import 'set_18.stl'
+ball group 'cluster18' range geometry-space 'set_18' inside
+rblock group 'cluster18' range geometry-space 'set_18' inside
+
+geometry import 'set_19.stl'
+ball group 'cluster19' range  geometry-space 'set_19' inside
+rblock group 'cluster19' range  geometry-space 'set_19' inside
+
+geometry import 'set_20.stl'
+ball group 'cluster20' range geometry-space 'set_20' inside
+rblock group 'cluster20' range geometry-space 'set_20' inside

@@ -1,0 +1,79 @@
+model restore "ballsample"
+ball export geometry set 'set_1'    resolution 0.1  range group '1'
+geometry  export 'set_1.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_2'    resolution 0.1  range group '2'
+geometry  export 'set_2.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_3'    resolution 0.1  range group '3'
+geometry  export 'set_3.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_4'    resolution 0.1  range group '4'
+geometry  export 'set_4.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_5'    resolution 0.1  range group '5'
+geometry  export 'set_5.stl' format stl
+
+model restore "ballsample"
+ball export geometry set 'set_6'    resolution 0.1  range group '6'
+geometry  export 'set_6.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_7'    resolution 0.1  range group '7'
+geometry  export 'set_7.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_8'    resolution 0.1  range group '8'
+geometry  export 'set_8.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_9'    resolution 0.1  range group '9'
+geometry  export 'set_9.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_10'    resolution 0.1  range group '10'
+geometry  export 'set_10.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_11'    resolution 0.1  range group '11'
+geometry  export 'set_11.stl' format stl
+
+model restore "ballsample"
+ball export geometry set 'set_12'    resolution 0.1  range group '12'
+geometry  export 'set_12.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_13'    resolution 0.1  range group '13'
+geometry  export 'set_13.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_14'    resolution 0.1  range group '14'
+geometry  export 'set_14.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_15'    resolution 0.1  range group '15'
+geometry  export 'set_15.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_16'    resolution 0.1  range group '16'
+geometry  export 'set_16.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_17'    resolution 0.1  range group '17'
+geometry  export 'set_17.stl' format stl
+
+model restore "ballsample"
+ball export geometry set 'set_18'    resolution 0.1  range group '18'
+geometry  export 'set_18.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_19'    resolution 0.1  range group '19'
+geometry  export 'set_19.stl' format stl 
+
+model restore "ballsample"
+ball export geometry set 'set_20'    resolution 0.1  range group '20'
+geometry  export 'set_20.stl' format stl 
